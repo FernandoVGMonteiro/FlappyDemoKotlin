@@ -5,14 +5,14 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch
 import com.badlogic.gdx.math.Vector3
 
 abstract class State(
-        gsm: GameStateManager
+        // Gerencia os estados/transições entre estados, etc
+        protected val gsm: GameStateManager
 ) {
     // Camera que vai localizar a posição no Game World
-    private lateinit var cam: OrthographicCamera
+    protected val cam: OrthographicCamera = OrthographicCamera()
+
     // Mouse que funciona com coordenadas XYZ
-    private lateinit var mouse: Vector3
-    // Gerencia os estados/transições entre estados, etc
-    private lateinit var gsm: GameStateManager
+    protected val mouse = Vector3()
 
     abstract fun handleInput()
     // DT: Diferença de tempo entre os frames
@@ -20,9 +20,6 @@ abstract class State(
     // SP: Container com tudo que a vamos renderizar na tela
     abstract fun render(sb: SpriteBatch)
 
-    init {
-        this.gsm = gsm
-        cam = OrthographicCamera()
-        mouse = Vector3()
-    }
+    // Evita vazamento de memória
+    abstract fun dispose()
 }
