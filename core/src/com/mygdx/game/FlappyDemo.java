@@ -7,6 +7,12 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 
 public class FlappyDemo extends ApplicationAdapter {
+	// Variáveis Globais da tela
+	public static final int WIDTH = 480;
+	public static final int HEITGHT = 800;
+
+	public static final String TITLE = "Flappy Bird";
+
 	SpriteBatch batch;
 	Texture img;
 	

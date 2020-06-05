@@ -7,6 +7,12 @@ import com.mygdx.game.FlappyDemo;
 public class DesktopLauncher {
 	public static void main (String[] arg) {
 		LwjglApplicationConfiguration config = new LwjglApplicationConfiguration();
+
+		// Mudando parâmetros da janela
+		config.width = FlappyDemo.WIDTH;
+		config.height = FlappyDemo.HEITGHT;
+		config.title = FlappyDemo.TITLE;
+
 		new LwjglApplication(new FlappyDemo(), config);
 	}
 }
