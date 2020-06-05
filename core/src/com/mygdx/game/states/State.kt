@@ -14,11 +14,11 @@ abstract class State(
     // Gerencia os estados/transições entre estados, etc
     private lateinit var gsm: GameStateManager
 
-    protected abstract fun handleInput()
+    abstract fun handleInput()
     // DT: Diferença de tempo entre os frames
-    protected abstract fun update(dt: Float)
+    abstract fun update(dt: Float)
     // SP: Container com tudo que a vamos renderizar na tela
-    protected abstract fun render(sb: SpriteBatch)
+    abstract fun render(sb: SpriteBatch)
 
     init {
         this.gsm = gsm
